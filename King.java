@@ -6,14 +6,14 @@ public class King implements MoveCommand {
     }
     public void move(){
         chessboard.move(1,1);
-        System.out.println(chessboard.getCurrent());
+        System.out.println("MOVE KING: " + chessboard.getCurrent());
     }
     public void undo(){
         chessboard.moveBack(1,1);
-        System.out.println(chessboard.getCurrent());
+        System.out.println("UNDO KING: " + chessboard.getCurrent());
     }
     public void redo(){
         chessboard.move(1,1);
-        System.out.println(chessboard.getCurrent());
+        System.out.println("REDO KING: " + chessboard.getCurrent());
     }
 }

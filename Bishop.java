@@ -6,14 +6,14 @@ public class Bishop implements MoveCommand {
     }
     public void move(){
         chessboard.move(1,1);
-        System.out.println(chessboard.getCurrent());
+        System.out.println("MOVE BISHOP: " + chessboard.getCurrent());
     }
     public void undo(){
         chessboard.moveBack(1,1);
-        System.out.println(chessboard.getCurrent());
+        System.out.println("UNDO BISHOP: " + chessboard.getCurrent());
     }
     public void redo(){
         chessboard.move(1,1);
-        System.out.println(chessboard.getCurrent());
+        System.out.println("REDO BISHOP: " + chessboard.getCurrent());
     }
 }

@@ -6,14 +6,14 @@ public class Pawn implements MoveCommand{
     }
     public void move(){
         chessboard.move(0,1);
-        System.out.println(chessboard.getCurrent());
+        System.out.println("MOVE PAWN: " + chessboard.getCurrent());
     }
     public void undo(){
         chessboard.moveBack(0,1);
-        System.out.println(chessboard.getCurrent());
+        System.out.println("UNDO PAWN: " + chessboard.getCurrent());
     }
     public void redo(){
         chessboard.move(0,1);
-        System.out.println(chessboard.getCurrent());
+        System.out.println("REDO PAWN: " + chessboard.getCurrent());
     }
 }

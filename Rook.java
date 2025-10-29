@@ -6,14 +6,14 @@ public class Rook implements MoveCommand {
     }
     public void move(){
         chessboard.move(3,0);
-        System.out.println(chessboard.getCurrent());
+        System.out.println("MOVE ROOK: " + chessboard.getCurrent());
     }
     public void undo(){
         chessboard.moveBack(3,0);
-        System.out.println(chessboard.getCurrent());
+        System.out.println("UNDO ROOK: " + chessboard.getCurrent());
     }
     public void redo(){
         chessboard.move(3,0);
-        System.out.println(chessboard.getCurrent());
+        System.out.println("REDO ROOK: " + chessboard.getCurrent());
     }
 }

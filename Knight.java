@@ -6,14 +6,14 @@ public class Knight implements MoveCommand {
     }
     public void move(){
         chessboard.move(1,2);
-        System.out.println(chessboard.getCurrent());
+        System.out.println("MOVE KNIGHT: " + chessboard.getCurrent());
     }
     public void undo(){
         chessboard.moveBack(1,2);
-        System.out.println(chessboard.getCurrent());
+        System.out.println("UNDO KNIGHT: " + chessboard.getCurrent());
     }
     public void redo(){
         chessboard.move(1,2);
-        System.out.println(chessboard.getCurrent());
+        System.out.println("REDO KNIGHT: " + chessboard.getCurrent());
     }
 }

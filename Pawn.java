@@ -4,18 +4,16 @@ public class Pawn implements MoveCommand{
     public Pawn(Board chessboard) {
         this.chessboard = chessboard;
     }
-    @Override
     public void move(){
-        String m = "MOVE: Pawn moved from A2 to A3";
-        System.out.println(m);
+        chessboard.move(0,1);
+        System.out.println(chessboard.getCurrent());
     }
-    @Override
     public void undo(){
-        String m = "UNDO: Pawn moved back from A3 to A2";
-        System.out.println(m);
+        chessboard.moveBack(0,1);
+        System.out.println(chessboard.getCurrent());
     }
-    @Override
     public void redo(){
-        this.move();
+        chessboard.move(0,1);
+        System.out.println(chessboard.getCurrent());
     }
 }

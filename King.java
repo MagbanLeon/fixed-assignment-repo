@@ -4,18 +4,16 @@ public class King implements MoveCommand {
     public King(Board chessboard) {
         this.chessboard = chessboard;
     }
-    @Override
     public void move(){
-        String m = "MOVE: King moved from E1 to E2";
-        System.out.println(m);
+        chessboard.move(1,1);
+        System.out.println(chessboard.getCurrent());
     }
-    @Override
     public void undo(){
-        String m = "UNDO: King moved back from E2 to E1";
-        System.out.println(m);
+        chessboard.moveBack(1,1);
+        System.out.println(chessboard.getCurrent());
     }
-    @Override
     public void redo(){
-        this.move();
+        chessboard.move(1,1);
+        System.out.println(chessboard.getCurrent());
     }
 }

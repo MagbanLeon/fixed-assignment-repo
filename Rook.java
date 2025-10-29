@@ -4,17 +4,16 @@ public class Rook implements MoveCommand {
     public Rook(Board chessboard) {
         this.chessboard = chessboard;
     }
-    
-    @Override
     public void move(){
-        String m = "MOVE: Rook moved from A1 to A2";
-        System.out.println(m);
+        chessboard.move(3,0);
+        System.out.println(chessboard.getCurrent());
     }
     public void undo(){
-        String m = "UNDO: Rook moved back from A2 to A1";
-        System.out.println(m);
+        chessboard.moveBack(3,0);
+        System.out.println(chessboard.getCurrent());
     }
     public void redo(){
-        this.move();
+        chessboard.move(3,0);
+        System.out.println(chessboard.getCurrent());
     }
 }

@@ -4,18 +4,16 @@ public class Knight implements MoveCommand {
     public Knight(Board chessboard) {
         this.chessboard = chessboard;
     }
-    @Override
     public void move(){
-        String m = "MOVE: Knight moved from B1 to C3";
-        System.out.println(m);
+        chessboard.move(1,2);
+        System.out.println(chessboard.getCurrent());
     }
-    @Override
     public void undo(){
-        String m = "UNDO: Pawn moved back from C3 to B1";
-        System.out.println(m);
+        chessboard.moveBack(1,2);
+        System.out.println(chessboard.getCurrent());
     }
-    @Override
     public void redo(){
-        this.move();
+        chessboard.move(1,2);
+        System.out.println(chessboard.getCurrent());
     }
 }

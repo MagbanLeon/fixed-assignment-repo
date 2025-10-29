@@ -5,18 +5,16 @@ public class Queen implements MoveCommand {
     public Queen(Board chessboard) {
         this.chessboard = chessboard;
     }
-    @Override
     public void move(){
-        String m = "MOVE: Queen moved from D1 to D2";
-        System.out.println(m);
+        chessboard.move(5,5);
+        System.out.println(chessboard.getCurrent());
     }
-    @Override
     public void undo(){
-        String m = "UNDO: Queen moved back from D2 to D1";
-        System.out.println(m);
+        chessboard.moveBack(5,5);
+        System.out.println(chessboard.getCurrent());
     }
-    @Override
     public void redo(){
-        this.move();
+        chessboard.move(5,5);
+        System.out.println(chessboard.getCurrent());
     }
 }

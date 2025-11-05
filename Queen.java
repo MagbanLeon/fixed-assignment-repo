@@ -7,16 +7,16 @@ public class Queen implements MoveCommand {
         name = "Queen";
     }
     public void move(){
-        chessboard.move(5,5);
-        System.out.println("MOVE QUEEN: " + chessboard.getCurrent());
+        chessboard.move(5,5, getName());
+        System.out.println("MOVE QUEEN: " + chessboard.getCurrent(getName()));
     }
     public void undo(){
-        chessboard.moveBack(5,5);
-        System.out.println("REDO QUEEN: " + chessboard.getCurrent());
+        chessboard.moveBack(5,5, getName());
+        System.out.println("REDO QUEEN: " + chessboard.getCurrent(getName()));
     }
     public void redo(){
-        chessboard.move(5,5);
-        System.out.println("UNDO QUEEN: " + chessboard.getCurrent());
+        chessboard.move(5,5, getName());
+        System.out.println("UNDO QUEEN: " + chessboard.getCurrent(getName()));
     }
     public String getName() {
         return name;

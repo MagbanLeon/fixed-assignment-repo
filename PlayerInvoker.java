@@ -1,54 +1,46 @@
-//import java.util.ArrayList;
-
 public class PlayerInvoker {
-    private MoveCommand[] commands = new MoveCommand[6];
-    //private ArrayList commands = new ArrayList();
     private Board currentBoard;
     private MoveCommand mostRecent;
 
     public PlayerInvoker() {
-        commands = new MoveCommand[6];
-        //currentBoard = new Board();
+        // commands = new MoveCommand[6];
+        currentBoard = new Board();
     }
-    public void move(int level){
-        commands[level].move();
-        //mostRecent = ;
-    }
-    public void Redo(int level) {
+    public void Redo() {
         mostRecent.redo();
     }
-    public void Undo(int level){
+    public void Undo(){
         mostRecent.undo();
     }
 
     //Adding Pawn Movement
     public void Pawn() {
-        MoveCommand cmd = new Pawn(currentBoard);
-        commands[0] = cmd;
+        mostRecent = new Pawn(currentBoard);
+        mostRecent.move();
     }
     //Adding Rook Movement
     public void Rook() {
-        MoveCommand cmd = new Rook(currentBoard);
-        commands[1] = cmd;
+        mostRecent = new Rook(currentBoard);
+        mostRecent.move();
     }
     //Adding Knight Movement
     public void Knight() {
-        MoveCommand cmd = new Knight(currentBoard);
-        commands[2] = cmd;
+        mostRecent = new Knight(currentBoard);
+        mostRecent.move();
     }
     //Adding Bishop Movement
     public void Bishop() {
-        MoveCommand cmd = new Bishop(currentBoard);
-        commands[3] = cmd;
+        mostRecent = new Bishop(currentBoard);
+        mostRecent.move();
     }
     //Adding Queen Movement
     public void Queen() {
-        MoveCommand cmd = new Queen(currentBoard);
-        commands[4] = cmd;
+        mostRecent = new Queen(currentBoard);
+        mostRecent.move();
     }
     //Adding King Movement
     public void King() {
-        MoveCommand cmd = new King(currentBoard);
-        commands[5] = cmd;
+        mostRecent = new King(currentBoard);
+        mostRecent.move();
     }
 }

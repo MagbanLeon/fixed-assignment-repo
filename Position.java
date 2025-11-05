@@ -2,6 +2,10 @@ public class Position {
     private int leftCoord;
     private int rightCoord;
 
+    public Position(){
+        leftCoord = 0;
+        rightCoord = 0;
+    }
     public int getLeftCoord() {
         return leftCoord;
     }

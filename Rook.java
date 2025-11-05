@@ -7,16 +7,16 @@ public class Rook implements MoveCommand {
         name = "Rook";
     }
     public void move(){
-        chessboard.move(3,0);
-        System.out.println("MOVE ROOK: " + chessboard.getCurrent());
+        chessboard.move(3,0, getName());
+        System.out.println("MOVE ROOK: " + chessboard.getCurrent(getName()));
     }
     public void undo(){
-        chessboard.moveBack(3,0);
-        System.out.println("UNDO ROOK: " + chessboard.getCurrent());
+        chessboard.moveBack(3,0, getName());
+        System.out.println("UNDO ROOK: " + chessboard.getCurrent(getName()));
     }
     public void redo(){
-        chessboard.move(3,0);
-        System.out.println("REDO ROOK: " + chessboard.getCurrent());
+        chessboard.move(3,0, getName());
+        System.out.println("REDO ROOK: " + chessboard.getCurrent(getName()));
     }
     public String getName() {
         return name;

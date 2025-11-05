@@ -4,12 +4,19 @@ public class Board {    //Clinet
     private HashMap<String, Position> piecePositions = new HashMap<String, Position>(); //to track board states
 
     public Board(){
-        piecePositions.put("Pawn", new Position());
-        piecePositions.put("Rook", new Position());
-        piecePositions.put("Knight", new Position());
-        piecePositions.put("Bishop", new Position());
-        piecePositions.put("King", new Position());
-        piecePositions.put("Queen", new Position());
+        piecePositions.put("WhitePawn", new Position());
+        piecePositions.put("WhiteRook", new Position());
+        piecePositions.put("WhiteKnight", new Position());
+        piecePositions.put("WhiteBishop", new Position());
+        piecePositions.put("WhiteKing", new Position());
+        piecePositions.put("WhiteQueen", new Position());
+
+        piecePositions.put("BlackPawn", new Position());
+        piecePositions.put("BlackRook", new Position());
+        piecePositions.put("BlackKnight", new Position());
+        piecePositions.put("BlackBishop", new Position());
+        piecePositions.put("BlackKing", new Position());
+        piecePositions.put("BlackQueen", new Position());
     }
     public void move(int left, int right, String pieceName){
         piecePositions.get(pieceName).setLeftCoord(piecePositions.get(pieceName).getLeftCoord() + left);

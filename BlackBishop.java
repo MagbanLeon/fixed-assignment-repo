@@ -1,22 +1,22 @@
-public class Bishop implements MoveCommand {
+public class BlackBishop implements MoveCommand {
     private Board chessboard;
     private String name;
 
-    public Bishop(Board chessboard) {
+    public BlackBishop(Board chessboard) {
         this.chessboard = chessboard;
-        name = "Bishop";
+        name = "BlackBishop";
     }
     public void move(){
         chessboard.move(1,1, getName());
-        System.out.println("MOVE BISHOP: " + chessboard.getCurrent(getName()));
+        System.out.println("BLACK MOVE BISHOP: " + chessboard.getCurrent(getName()));
     }
     public void undo(){
         chessboard.moveBack(1,1, getName());
-        System.out.println("UNDO BISHOP: " + chessboard.getCurrent(getName()));
+        System.out.println("BLACK UNDO BISHOP: " + chessboard.getCurrent(getName()));
     }
     public void redo(){
         chessboard.move(1,1, getName());
-        System.out.println("REDO BISHOP: " + chessboard.getCurrent(getName()));
+        System.out.println("BLACK REDO BISHOP: " + chessboard.getCurrent(getName()));
     }
     public String getName() {
         return name;

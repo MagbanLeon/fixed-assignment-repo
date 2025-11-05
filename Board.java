@@ -1,11 +1,14 @@
+import java.util.HashMap;
+
 public class Board {    //Clinet
-    //private PlayerInvoker player;
     private int leftCoord;
     private int rightCoord;
+    private HashMap<String, Position> piecePositions = new HashMap<String, Position>(); //to track board states
 
     public Board(int left, int right){
         this.leftCoord = left;
         this.rightCoord = right;
+        piecePositions.put(null, null);
     }
     public void move(int left, int right){
         leftCoord = leftCoord + left;

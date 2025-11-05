@@ -1,8 +1,10 @@
 public class Knight implements MoveCommand {
     private Board chessboard;
+    private String name;
     
     public Knight(Board chessboard) {
         this.chessboard = chessboard;
+        name = "Knight";
     }
     public void move(){
         chessboard.move(1,2);
@@ -15,5 +17,8 @@ public class Knight implements MoveCommand {
     public void redo(){
         chessboard.move(1,2);
         System.out.println("REDO KNIGHT: " + chessboard.getCurrent());
+    }
+    public String getName() {
+        return name;
     }
 }

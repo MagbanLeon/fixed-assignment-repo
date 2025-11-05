@@ -1,8 +1,10 @@
 public class King implements MoveCommand {
     private Board chessboard;
+    private String name;
     
     public King(Board chessboard) {
         this.chessboard = chessboard;
+        name = "King";
     }
     public void move(){
         chessboard.move(1,1);
@@ -15,5 +17,8 @@ public class King implements MoveCommand {
     public void redo(){
         chessboard.move(1,1);
         System.out.println("REDO KING: " + chessboard.getCurrent());
+    }
+    public String getName() {
+        return name;
     }
 }

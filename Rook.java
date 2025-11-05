@@ -1,8 +1,10 @@
 public class Rook implements MoveCommand {
     private Board chessboard;
+    private String name;
     
     public Rook(Board chessboard) {
         this.chessboard = chessboard;
+        name = "Rook";
     }
     public void move(){
         chessboard.move(3,0);
@@ -15,5 +17,8 @@ public class Rook implements MoveCommand {
     public void redo(){
         chessboard.move(3,0);
         System.out.println("REDO ROOK: " + chessboard.getCurrent());
+    }
+    public String getName() {
+        return name;
     }
 }

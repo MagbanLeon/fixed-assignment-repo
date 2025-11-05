@@ -4,26 +4,21 @@ public class PlayerInvoker {
     private MoveCommand[] commands = new MoveCommand[6];
     //private ArrayList commands = new ArrayList();
     private Board currentBoard;
+    private MoveCommand mostRecent;
 
     public PlayerInvoker() {
         commands = new MoveCommand[6];
         //currentBoard = new Board();
-
-        Pawn();     //0
-        Rook();     //1 
-        Knight();   //2
-        Bishop();   //3
-        Queen();    //4
-        King();     //5
     }
     public void move(int level){
         commands[level].move();
+        //mostRecent = ;
     }
     public void Redo(int level) {
-        commands[level].redo();
+        mostRecent.redo();
     }
     public void Undo(int level){
-        commands[level].undo();
+        mostRecent.undo();
     }
 
     //Adding Pawn Movement
